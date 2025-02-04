@@ -54,21 +54,21 @@ class HomeScreenState extends State<HomeScreen> {
 
   Uint8List? _generatedImage;
 
-  bool _isLoading = false; // Track loading state
+  // bool _isLoading = false; // Track loading state
 
   Future<void> _generateImage() async {
-    setState(() {
-      _isLoading = true; // Start loading
-    });
-    if (_isLoading)
-      CircularProgressIndicator(); // Show loading indicator on the screen
+    // setState(() {
+    //   _isLoading = true; // Start loading
+    // });
+    // if (_isLoading)
+    //   CircularProgressIndicator(); // Show loading indicator on the screen
 
     final image =
         await serviceClass.generateImageFromText(_promptTextController.text);
     setState(() {
       _generatedImage = image;
-      _isLoading = false;
-      if (!_isLoading) Image.memory(_generatedImage!);
+      // _isLoading = false;
+      // if (!_isLoading) Image.memory(_generatedImage!);
     }); // Assign the resolved Uint8List
   }
 
